@@ -6,80 +6,74 @@
     <title>메인 페이지</title>
     
     <style>
+        /* * (1단계 - 추가)
+         * 스타일 태그 맨 위에 @font-face를 추가합니다.
+         */
+        @font-face {
+            font-family: 'KoPubDotum'; /* kpdm. */
+            
+            /* * (★★★★★ 중요 ★★★★★)
+             * 여기에 GitHub에 업로드한 폰트 파일 경로와 이름을
+             * '정확하게' 적어주셔야 합니다.
+             * (예: 'KoPubWorld 돋움체 Medium.ttf')
+             * (만약 'fonts' 폴더에 넣었다면 'fonts/KoPubWorld 돋움체 Medium.ttf')
+             */
+            src: url('KoPubWorld Dotum Medium.ttf'); 
+        }
+        /* --- (여기까지 1단계 추가) --- */
+
+
         /* 1. 페이지 전체 설정 */
         body {
             /* 페이지 배경을 하얗게 */
             background-color: white;
             
+            /* * (2단계 - 변경)
+             * 기존 font-family 줄을 아래 코드로 변경(교체)합니다.
+             */
+            font-family: 'KoPubDotum', sans-serif;
+            
             /* 폰트 및 기본 여백 초기화 */
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        /* 2. 전체 내용을 감싸고 중앙 정렬할 컨테이너 */
+        /* 2. 전체 내용을 감싸고 중앙 정렬할 컨테이너 (기존과 동일) */
         .main-container {
-            /* PC 화면 기준으로 보기 좋게 최대 너비 설정 */
             max-width: 800px;
-            
-            /* 컨테이너 자체를 화면 중앙으로 */
             margin: 0 auto; 
-            
-            /* 위쪽에서 살짝 띄우기 */
             padding-top: 50px;
-            
-            /* (중요) 내부 요소들(제목, 버튼)을 중앙 정렬 */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* 3. 제목 스타일 */
+        /* 3. 제목 스타일 (기존과 동일) */
         h1 {
-            /* 제목은 이미 .main-container에 의해 중앙 정렬됨 */
             font-size: 2.5em;
             color: #333;
         }
 
-        /* 4. 버튼 스타일 */
+        /* 4. 버튼 스타일 (기존과 동일) */
         .nav-button {
-            /* (중요) 버튼 세로 나열 (flex-direction: column의 자식 요소) */
-            /* 각 버튼의 너비를 300px로 고정 */
             width: 300px; 
-            
-            /* (요청) 버튼 배경을 연한 하늘색으로 */
-            background-color: #add8e6; /* lightblue */
-            
-            /* 버튼끼리 세로 여백 (위아래 10px) */
+            background-color: #add8e6;
             margin: 10px 0;
-            
-            /* 버튼 안쪽 여백 (글자와 테두리 사이) */
             padding: 15px;
-            
-            /* 글자 스타일 */
-            color: #333; /* 글자색 (너무 밝은 색 피하기) */
-            text-decoration: none; /* 링크 밑줄 제거 */
+            color: #333;
+            text-decoration: none;
             font-size: 1.1em;
             font-weight: bold;
-            text-align: center; /* 버튼 내 텍스트 중앙 정렬 */
-            
-            /* 꾸미기 */
-            border-radius: 8px; /* 모서리 둥글게 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 연한 그림자 */
-            
-            /* 부드러운 효과 */
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
-        /* 5. 버튼에 마우스를 올렸을 때 효과 */
+        /* 5. 버튼에 마우스를 올렸을 때 효과 (기존과 동일) */
         .nav-button:hover {
-            /* 살짝 더 진한 하늘색 */
-            background-color: #87ceeb; /* skyblue */
-            
-            /* 그림자 강조 */
+            background-color: #87ceeb;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            
-            /* 살짝 위로 뜨는 효과 */
             transform: translateY(-2px);
         }
     </style>
